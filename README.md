@@ -1,6 +1,6 @@
 # Australian Biosecurity Genomic Database
 
-<img src="https://github.com/jbatovska/AustralianBiosecurityGenomicDatabase/blob/main/files/ABGD.png">
+<img src="https://raw.githubusercontent.com/ausbiopathgenDB/AustralianBiosecurityGenomicDatabase/13230e147009b5e2fc1487cb2692aa886dbb5c3a/files/ABGD.png">
 
 ## Introduction 
 The Australian Biosecurity Genomic Database is a curated collection of viral reference genomes based on the [National Notifiable Disease List of Terrestrial Animals] and the [National List of Reportable Diseases of Aquatic Animals]. The database is provided as a FASTA file that can be used to screen high-throughput sequencing (HTS) data generated from animals, animal products, or environmental samples.  
