@@ -12,6 +12,7 @@ The latest version of the database contains 88 viruses, representing 33 viral fa
   [Krona chart]: <https://htmlview.glitch.me/?https://github.com/jbatovska/AustralianBiosecurityGenomicDatabase/blob/main/files/ABGD_taxonomy.krona.html>
 
 # Usage guidelines
+
 ## 1. Initial screening
 Initial screening of HTS data for notifiable animal viruses can be performed by mapping reads to the Australian Biosecurity Genomic Database. Coverage of virus genomes in the database can then be measured by calculating the percentage of each genome sequence that is covered by reads. Further analysis can be performed to measure other coverage metrics such as the average number of reads that align to each genome sequence (fold coverage) and the similarity of the reads to the reference genome sequence (nucleotide identity). 
 
