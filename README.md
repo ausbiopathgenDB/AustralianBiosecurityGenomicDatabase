@@ -28,7 +28,7 @@ A triage system to rapidly assess confidence level (low, medium, and high) in th
 
 ### High confidence
 -	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has >10% coverage by reads with >95% pairwise nucleotide identity. 
--	This level of genome coverage indicates that the notifiable virus or a closely related virus are likely to be present in the sample. 
+-	This level of virus genome coverage indicates that the notifiable virus or a closely related virus are likely to be present in the sample. 
 -	Further analyses of the HTS data should be performed to determine what virus is present in the sample, including an investigation into whether there is read coverage of a region used for species/strain demarcation (see below). 
 -	If further analysis indicates that the virus is notifiable, then the relevant Australian reference laboratory or Chief Veterinary Officer should be contacted (see below). 
 
