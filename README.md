@@ -106,12 +106,12 @@ If there are any suspected detections, you can also call the Emergency Animal Di
 [Victoria]: <https://agriculture.vic.gov.au/biosecurity/animal-diseases/notifiable-diseases>
 [Tasmania]: <https://nre.tas.gov.au/biosecurity-tasmania/animal-biosecurity/animal-health/reporting-an-emergency-animal-disease>
 
-## States/territories disease list
-All diseases on the states/territories disease lists were reviewed and collated (Table 1). The list is comprised of 34 viruses, encompassing both aquatic and terrestrial diseases. Viral diseases that are on the national notifiable terrestrial and aquatic diseases list were removed from the list.  
+## Troubleshooting
+Further testing of the database using a greater number of HTS datasets from a variety of sample types and host animals is recommended to further inform the metrics and thresholds chosen for the screening analysis criteria, which will help to address some of the limitations associated with this approach (Table 1). The addition of biological characteristics such as host and symptoms could improve the applicability of the criteria when dealing with low or medium confidence results.
 
-<sub> **Table 1:** States/territories disease list. </sub>
+<sub> **Table 1:** Recommendations to address the possible issues associated with the use of read mapping to a database to screen HTS data for viral sequences. </sub>
 
-<img src="https://raw.githubusercontent.com/ausbiopathgenDB/AustralianBiosecurityGenomicDatabase/main/files/Guide_Table1_states%26territories.PNG">
+<img src="[https://raw.githubusercontent.com/ausbiopathgenDB/AustralianBiosecurityGenomicDatabase/main/files/Guide_Table1_troubleshooting.PNG]">
 
 ## References
 Schlaberg, Robert et al. 2017. ‘Validation of Metagenomic Next-Generation Sequencing Tests for Universal Pathogen Detection’. Archives of Pathology & Laboratory Medicine 141(6): 776–86. 
