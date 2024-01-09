@@ -111,7 +111,7 @@ Further testing of the database using a greater number of HTS datasets from a va
 
 <sub> **Table 1:** Recommendations to address the possible issues associated with the use of read mapping to a database to screen HTS data for viral sequences. </sub>
 
-<img src="[https://raw.githubusercontent.com/ausbiopathgenDB/AustralianBiosecurityGenomicDatabase/main/files/Guide_Table1_troubleshooting.PNG]">
+<img src="https://raw.githubusercontent.com/ausbiopathgenDB/AustralianBiosecurityGenomicDatabase/main/files/Guide_Table1_troubleshooting.PNG">
 
 ## References
 Schlaberg, Robert et al. 2017. ‘Validation of Metagenomic Next-Generation Sequencing Tests for Universal Pathogen Detection’. Archives of Pathology & Laboratory Medicine 141(6): 776–86. 
