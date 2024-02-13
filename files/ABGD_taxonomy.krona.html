@@ -5767,9 +5767,17 @@ function setCallBacks()
 	}
 	
 	image = document.getElementById('hiddenImage');
-	image.onload = function()
+	
+	if ( image.complete )
 	{
 		hiddenPattern = context.createPattern(image, 'repeat');
+	}
+	else
+	{
+		image.onload = function()
+		{
+			hiddenPattern = context.createPattern(image, 'repeat');
+		}
 	}
 	
 	var loadingImageElement = document.getElementById('loadingImage');
@@ -6076,10 +6084,10 @@ function snapshot()
 	snapshotMode = false;
 	
 	svg += svgFooter();
-	
-	var snapshotWindow = window.open('', '_blank', '', 'replace=false');
-	snapshotWindow.document.write('<html><body><a href="data:image/svg+xml,' + encodeURIComponent(svg) + '" download="snapshot.svg">Download Snapshot</a></html></body>');
-	snapshotWindow.document.write(svg);
+	var dataUri = 'data:image/svg+xml,' + encodeURIComponent(svg)
+	var string = '<html><body><iframe src="' + dataUri + '" frameborder="0" style="position:absolute; border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe><a style="position:absolute" href="' + dataUri + '" download="snapshot.svg">Download Snapshot</a></html></body>';
+    var win = window.open();
+    win.document.write(string)
 }
 
 function save()
@@ -6621,986 +6629,1169 @@ function zoomOut()
     <attribute display="Avg. score">score</attribute>
    </attributes>
    <datasets>
-    <dataset>krona_taxonomy</dataset>
+    <dataset>krona_taxonomy_60</dataset>
    </datasets>
    <color attribute="score" hueStart="0" hueEnd="120" valueStart="1" valueEnd="1" default="false" ></color>
 <node name="Root">
- <count><val>57</val></count>
+ <count><val>60</val></count>
  <node name="Viruses">
-  <score><val>1</val></score>
-  <count><val>57</val></count>
   <rank><val>superkingdom</val></rank>
+  <count><val>60</val></count>
   <taxon><val href="10239">10239</val></taxon>
-  <node name="Ortervirales">
-   <taxon><val href="2169561">2169561</val></taxon>
-   <rank><val>order</val></rank>
-   <count><val>4</val></count>
+  <score><val>1</val></score>
+  <node name="Varidnaviria">
+   <count><val>5</val></count>
+   <taxon><val href="2732004">2732004</val></taxon>
    <score><val>1</val></score>
-   <node name="Retroviridae">
+   <rank><val>clade</val></rank>
+   <node name="Bamfordvirae">
+    <rank><val>kingdom</val></rank>
     <score><val>1</val></score>
-    <count><val>4</val></count>
-    <taxon><val href="11632">11632</val></taxon>
-    <rank><val>family</val></rank>
-    <node name="Orthoretrovirinae">
-     <taxon><val href="327045">327045</val></taxon>
-     <rank><val>subfamily</val></rank>
-     <count><val>4</val></count>
+    <taxon><val href="2732005">2732005</val></taxon>
+    <count><val>5</val></count>
+    <node name="Nucleocytoviricota">
+     <rank><val>phylum</val></rank>
      <score><val>1</val></score>
-     <node name="Lentivirus">
-      <rank><val>genus</val></rank>
-      <taxon><val href="11646">11646</val></taxon>
-      <count><val>3</val></count>
+     <count><val>5</val></count>
+     <taxon><val href="2732007">2732007</val></taxon>
+     <node name="Pokkesviricetes">
+      <rank><val>class</val></rank>
       <score><val>1</val></score>
-      <node name="Equine infectious anemia virus">
+      <taxon><val href="2732525">2732525</val></taxon>
+      <count><val>5</val></count>
+      <node name="Chitovirales">
        <score><val>1</val></score>
-       <count><val>1</val></count>
-       <taxon><val href="11665">11665</val></taxon>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Equine infectious anemia virus</val></vals>
-       </members>
+       <count><val>4</val></count>
+       <taxon><val href="2732527">2732527</val></taxon>
+       <rank><val>order</val></rank>
+       <node name="Poxviridae">
+        <taxon><val href="10240">10240</val></taxon>
+        <count><val>4</val></count>
+        <score><val>1</val></score>
+        <rank><val>family</val></rank>
+        <node name="Chordopoxvirinae">
+         <rank><val>subfamily</val></rank>
+         <count><val>4</val></count>
+         <taxon><val href="10241">10241</val></taxon>
+         <score><val>1</val></score>
+         <node name="Orthopoxvirus">
+          <rank><val>genus</val></rank>
+          <taxon><val href="10242">10242</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <node name="Camelpox virus">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="28873">28873</val></taxon>
+           <count><val>1</val></count>
+           <members>
+            <vals><val>Camelpox virus</val></vals>
+           </members>
+          </node>
+         </node>
+         <node name="Capripoxvirus">
+          <taxon><val href="10265">10265</val></taxon>
+          <count><val>3</val></count>
+          <score><val>1</val></score>
+          <rank><val>genus</val></rank>
+          <node name="Lumpy skin disease virus">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="59509">59509</val></taxon>
+           <members>
+            <vals><val>Lumpy skin disease virus</val></vals>
+           </members>
+          </node>
+          <node name="Goatpox virus">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="186805">186805</val></taxon>
+           <members>
+            <vals><val>Goatpox virus</val></vals>
+           </members>
+          </node>
+          <node name="Sheeppox virus">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="10266">10266</val></taxon>
+           <members>
+            <vals><val>Sheeppox virus</val></vals>
+           </members>
+          </node>
+         </node>
+        </node>
+       </node>
       </node>
-      <node name="Visna-maedi virus">
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Visna-maedi virus</val></vals>
-       </members>
-       <taxon><val href="2169971">2169971</val></taxon>
-       <count><val>1</val></count>
+      <node name="Asfuvirales">
        <score><val>1</val></score>
-      </node>
-      <node name="Jembrana disease virus">
-       <taxon><val href="36370">36370</val></taxon>
-       <members>
-        <vals><val>Jembrana disease virus</val></vals>
-       </members>
-       <rank><val>species</val></rank>
+       <taxon><val href="2732526">2732526</val></taxon>
        <count><val>1</val></count>
-       <score><val>1</val></score>
+       <rank><val>order</val></rank>
+       <node name="Asfarviridae">
+        <score><val>1</val></score>
+        <count><val>1</val></count>
+        <taxon><val href="137992">137992</val></taxon>
+        <rank><val>family</val></rank>
+        <node name="Asfivirus">
+         <rank><val>genus</val></rank>
+         <score><val>1</val></score>
+         <taxon><val href="39743">39743</val></taxon>
+         <count><val>1</val></count>
+         <node name="African swine fever virus">
+          <taxon><val href="10497">10497</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <rank><val>species</val></rank>
+          <members>
+           <vals><val>African swine fever virus</val></vals>
+          </members>
+         </node>
+        </node>
+       </node>
       </node>
-     </node>
-     <node name="Deltaretrovirus">
-      <count><val>1</val></count>
-      <taxon><val href="153136">153136</val></taxon>
-      <rank><val>genus</val></rank>
-      <score><val>1</val></score>
-      <node name="Bovine leukemia virus">
-       <count><val>1</val></count>
-       <members>
-        <vals><val>Bovine leukemia virus</val></vals>
-       </members>
-       <rank><val>species</val></rank>
-       <taxon><val href="11901">11901</val></taxon>
-       <score><val>1</val></score>
-      </node>
-     </node>
-    </node>
-   </node>
-  </node>
-  <node name="Poxviridae">
-   <count><val>4</val></count>
-   <taxon><val href="10240">10240</val></taxon>
-   <rank><val>family</val></rank>
-   <score><val>1</val></score>
-   <node name="Chordopoxvirinae">
-    <score><val>1</val></score>
-    <count><val>4</val></count>
-    <rank><val>subfamily</val></rank>
-    <taxon><val href="10241">10241</val></taxon>
-    <node name="Orthopoxvirus">
-     <rank><val>genus</val></rank>
-     <taxon><val href="10242">10242</val></taxon>
-     <count><val>1</val></count>
-     <score><val>1</val></score>
-     <node name="Camelpox virus">
-      <count><val>1</val></count>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Camelpox virus</val></vals>
-      </members>
-      <taxon><val href="28873">28873</val></taxon>
-      <score><val>1</val></score>
-     </node>
-    </node>
-    <node name="Capripoxvirus">
-     <count><val>3</val></count>
-     <taxon><val href="10265">10265</val></taxon>
-     <rank><val>genus</val></rank>
-     <score><val>1</val></score>
-     <node name="Lumpy skin disease virus">
-      <count><val>1</val></count>
-      <taxon><val href="59509">59509</val></taxon>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Lumpy skin disease virus</val></vals>
-      </members>
-      <score><val>1</val></score>
-     </node>
-     <node name="Sheeppox virus">
-      <score><val>1</val></score>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Sheeppox virus</val></vals>
-      </members>
-      <taxon><val href="10266">10266</val></taxon>
-      <count><val>1</val></count>
-     </node>
-     <node name="Goatpox virus">
-      <score><val>1</val></score>
-      <taxon><val href="186805">186805</val></taxon>
-      <members>
-       <vals><val>Goatpox virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <count><val>1</val></count>
      </node>
     </node>
    </node>
   </node>
   <node name="Riboviria">
    <score><val>1</val></score>
-   <count><val>43</val></count>
-   <rank><val>no rank</val></rank>
+   <count><val>50</val></count>
    <taxon><val href="2559587">2559587</val></taxon>
-   <node name="Caliciviridae">
+   <rank><val>clade</val></rank>
+   <node name="Orthornavirae">
+    <taxon><val href="2732396">2732396</val></taxon>
+    <count><val>46</val></count>
     <score><val>1</val></score>
-    <count><val>1</val></count>
-    <rank><val>family</val></rank>
-    <taxon><val href="11974">11974</val></taxon>
-    <node name="Vesivirus">
-     <rank><val>genus</val></rank>
-     <taxon><val href="95337">95337</val></taxon>
+    <rank><val>kingdom</val></rank>
+    <node name="Birnaviridae">
      <count><val>1</val></count>
+     <taxon><val href="10993">10993</val></taxon>
      <score><val>1</val></score>
-     <node name="Vesicular exanthema of swine virus">
-      <score><val>1</val></score>
-      <count><val>1</val></count>
-      <taxon><val href="35612">35612</val></taxon>
-      <members>
-       <vals><val>Vesicular exanthema of swine virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-     </node>
-    </node>
-   </node>
-   <node name="Togaviridae">
-    <score><val>1</val></score>
-    <taxon><val href="11018">11018</val></taxon>
-    <rank><val>family</val></rank>
-    <count><val>4</val></count>
-    <node name="Alphavirus">
-     <score><val>1</val></score>
-     <rank><val>genus</val></rank>
-     <taxon><val href="11019">11019</val></taxon>
-     <count><val>4</val></count>
-     <node name="Venezuelan equine encephalitis virus">
-      <count><val>1</val></count>
-      <taxon><val href="11036">11036</val></taxon>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Venezuelan equine encephalitis virus</val></vals>
-      </members>
-      <score><val>1</val></score>
-     </node>
-     <node name="Getah virus">
-      <score><val>1</val></score>
-      <members>
-       <vals><val>Getah virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <taxon><val href="59300">59300</val></taxon>
-      <count><val>1</val></count>
-     </node>
-     <node name="Eastern equine encephalitis virus">
-      <score><val>1</val></score>
-      <count><val>1</val></count>
-      <taxon><val href="11021">11021</val></taxon>
-      <members>
-       <vals><val>Eastern equine encephalitis virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-     </node>
-     <node name="Western equine encephalitis virus">
-      <score><val>1</val></score>
-      <taxon><val href="11039">11039</val></taxon>
-      <members>
-       <vals><val>Western equine encephalitis virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <count><val>1</val></count>
-     </node>
-    </node>
-   </node>
-   <node name="Negarnaviricota">
-    <count><val>15</val></count>
-    <rank><val>phylum</val></rank>
-    <taxon><val href="2497569">2497569</val></taxon>
-    <score><val>1</val></score>
-    <node name="Haploviricotina">
-     <score><val>1</val></score>
-     <count><val>11</val></count>
-     <taxon><val href="2497570">2497570</val></taxon>
-     <rank><val>subphylum</val></rank>
-     <node name="Monjiviricetes">
-      <score><val>1</val></score>
-      <taxon><val href="2497574">2497574</val></taxon>
-      <rank><val>class</val></rank>
-      <count><val>11</val></count>
-      <node name="Mononegavirales">
-       <score><val>1</val></score>
-       <taxon><val href="11157">11157</val></taxon>
-       <rank><val>order</val></rank>
-       <count><val>11</val></count>
-       <node name="Bornaviridae">
-        <score><val>1</val></score>
-        <taxon><val href="178830">178830</val></taxon>
-        <rank><val>family</val></rank>
-        <count><val>1</val></count>
-        <node name="Orthobornavirus">
-         <count><val>1</val></count>
-         <rank><val>genus</val></rank>
-         <taxon><val href="186458">186458</val></taxon>
-         <score><val>1</val></score>
-         <node name="Mammalian 1 orthobornavirus">
-          <count><val>1</val></count>
-          <taxon><val href="1714619">1714619</val></taxon>
-          <rank><val>species</val></rank>
-          <score><val>1</val></score>
-          <node name="Borna disease virus 1">
-           <score><val>1</val></score>
-           <count><val>1</val></count>
-           <taxon><val href="1714621">1714621</val></taxon>
-           <rank><val>no rank</val></rank>
-           <members>
-            <vals><val>Borna disease virus 1</val></vals>
-           </members>
-          </node>
-         </node>
-        </node>
-       </node>
-       <node name="Paramyxoviridae">
-        <score><val>1</val></score>
-        <rank><val>family</val></rank>
-        <taxon><val href="11158">11158</val></taxon>
-        <count><val>6</val></count>
-        <node name="Rubulavirinae">
-         <score><val>1</val></score>
-         <count><val>1</val></count>
-         <taxon><val href="2560080">2560080</val></taxon>
-         <rank><val>subfamily</val></rank>
-         <node name="Pararubulavirus">
-          <count><val>1</val></count>
-          <rank><val>genus</val></rank>
-          <taxon><val href="2560200">2560200</val></taxon>
-          <score><val>1</val></score>
-          <node name="Menangle pararubulavirus">
-           <rank><val>species</val></rank>
-           <taxon><val href="2560586">2560586</val></taxon>
-           <count><val>1</val></count>
-           <score><val>1</val></score>
-           <node name="Menangle virus">
-            <score><val>1</val></score>
-            <count><val>1</val></count>
-            <rank><val>no rank</val></rank>
-            <members>
-             <vals><val>Menangle virus</val></vals>
-            </members>
-            <taxon><val href="152219">152219</val></taxon>
-           </node>
-          </node>
-         </node>
-        </node>
-        <node name="Orthoparamyxovirinae">
-         <rank><val>subfamily</val></rank>
-         <taxon><val href="2560076">2560076</val></taxon>
-         <count><val>4</val></count>
-         <score><val>1</val></score>
-         <node name="Morbillivirus">
-          <count><val>2</val></count>
-          <taxon><val href="11229">11229</val></taxon>
-          <rank><val>genus</val></rank>
-          <score><val>1</val></score>
-          <node name="Small ruminant morbillivirus">
-           <score><val>1</val></score>
-           <rank><val>species</val></rank>
-           <taxon><val href="31604">31604</val></taxon>
-           <count><val>1</val></count>
-           <node name="Peste-des-petits-ruminants virus">
-            <taxon><val href="2593991">2593991</val></taxon>
-            <rank><val>no rank</val></rank>
-            <members>
-             <vals><val>Peste des petits ruminants virus</val></vals>
-            </members>
-            <count><val>1</val></count>
-            <score><val>1</val></score>
-           </node>
-          </node>
-          <node name="Rinderpest morbillivirus">
-           <score><val>1</val></score>
-           <count><val>1</val></count>
-           <taxon><val href="11241">11241</val></taxon>
-           <rank><val>species</val></rank>
-           <members>
-            <vals><val>Rinderpest morbillivirus</val></vals>
-           </members>
-          </node>
-         </node>
-         <node name="Henipavirus">
-          <score><val>1</val></score>
-          <rank><val>genus</val></rank>
-          <taxon><val href="260964">260964</val></taxon>
-          <count><val>2</val></count>
-          <node name="Hendra henipavirus">
-           <count><val>1</val></count>
-           <members>
-            <vals><val>Hendra henipavirus</val></vals>
-           </members>
-           <rank><val>species</val></rank>
-           <taxon><val href="63330">63330</val></taxon>
-           <score><val>1</val></score>
-          </node>
-          <node name="Nipah henipavirus">
-           <count><val>1</val></count>
-           <rank><val>species</val></rank>
-           <members>
-            <vals><val>Nipah henipavirus</val></vals>
-           </members>
-           <taxon><val href="121791">121791</val></taxon>
-           <score><val>1</val></score>
-          </node>
-         </node>
-        </node>
-        <node name="Avulavirinae">
-         <count><val>1</val></count>
-         <taxon><val href="2560069">2560069</val></taxon>
-         <rank><val>subfamily</val></rank>
-         <score><val>1</val></score>
-         <node name="Orthoavulavirus">
-          <score><val>1</val></score>
-          <rank><val>genus</val></rank>
-          <taxon><val href="2560194">2560194</val></taxon>
-          <count><val>1</val></count>
-          <node name="Avian orthoavulavirus 1">
-           <count><val>1</val></count>
-           <rank><val>species</val></rank>
-           <members>
-            <vals><val>Avian orthoavulavirus 1</val></vals>
-           </members>
-           <taxon><val href="2560319">2560319</val></taxon>
-           <score><val>1</val></score>
-          </node>
-         </node>
-        </node>
-       </node>
-       <node name="Rhabdoviridae">
-        <taxon><val href="11270">11270</val></taxon>
-        <rank><val>family</val></rank>
-        <count><val>3</val></count>
-        <score><val>1</val></score>
-        <node name="Vesiculovirus">
-         <score><val>1</val></score>
-         <count><val>1</val></count>
-         <taxon><val href="11271">11271</val></taxon>
-         <rank><val>genus</val></rank>
-         <node name="Indiana vesiculovirus">
-          <taxon><val href="1972577">1972577</val></taxon>
-          <rank><val>species</val></rank>
-          <count><val>1</val></count>
-          <score><val>1</val></score>
-          <node name="Vesicular stomatitis Indiana virus">
-           <score><val>1</val></score>
-           <taxon><val href="11277">11277</val></taxon>
-           <rank><val>no rank</val></rank>
-           <members>
-            <vals><val>Vesicular stomatitis Indiana virus</val></vals>
-           </members>
-           <count><val>1</val></count>
-          </node>
-         </node>
-        </node>
-        <node name="Lyssavirus">
-         <count><val>2</val></count>
-         <rank><val>genus</val></rank>
-         <taxon><val href="11286">11286</val></taxon>
-         <score><val>1</val></score>
-         <node name="Rabies lyssavirus">
-          <members>
-           <vals><val>Rabies lyssavirus</val></vals>
-          </members>
-          <rank><val>species</val></rank>
-          <taxon><val href="11292">11292</val></taxon>
-          <count><val>1</val></count>
-          <score><val>1</val></score>
-         </node>
-         <node name="Australian bat lyssavirus">
-          <rank><val>species</val></rank>
-          <members>
-           <vals><val>Australian bat lyssavirus</val></vals>
-          </members>
-          <taxon><val href="90961">90961</val></taxon>
-          <count><val>1</val></count>
-          <score><val>1</val></score>
-         </node>
-        </node>
-       </node>
-       <node name="Pneumoviridae">
-        <rank><val>family</val></rank>
-        <taxon><val href="11244">11244</val></taxon>
-        <count><val>1</val></count>
-        <score><val>1</val></score>
-        <node name="Metapneumovirus">
-         <score><val>1</val></score>
-         <count><val>1</val></count>
-         <rank><val>genus</val></rank>
-         <taxon><val href="162387">162387</val></taxon>
-         <node name="Avian metapneumovirus">
-          <score><val>1</val></score>
-          <count><val>1</val></count>
-          <rank><val>species</val></rank>
-          <members>
-           <vals><val>Avian metapneumovirus</val></vals>
-          </members>
-          <taxon><val href="38525">38525</val></taxon>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-    </node>
-    <node name="Polyploviricotina">
-     <count><val>4</val></count>
-     <rank><val>subphylum</val></rank>
-     <taxon><val href="2497571">2497571</val></taxon>
-     <score><val>1</val></score>
-     <node name="Insthoviricetes">
-      <taxon><val href="2497577">2497577</val></taxon>
-      <rank><val>class</val></rank>
-      <count><val>1</val></count>
-      <score><val>1</val></score>
-      <node name="Articulavirales">
-       <count><val>1</val></count>
-       <taxon><val href="2499411">2499411</val></taxon>
-       <rank><val>order</val></rank>
-       <score><val>1</val></score>
-       <node name="Orthomyxoviridae">
-        <score><val>1</val></score>
-        <rank><val>family</val></rank>
-        <taxon><val href="11308">11308</val></taxon>
-        <count><val>1</val></count>
-        <node name="Alphainfluenzavirus">
-         <count><val>1</val></count>
-         <taxon><val href="197911">197911</val></taxon>
-         <rank><val>genus</val></rank>
-         <score><val>1</val></score>
-         <node name="Influenza A virus">
-          <score><val>1</val></score>
-          <taxon><val href="11320">11320</val></taxon>
-          <rank><val>species</val></rank>
-          <members>
-           <vals><val>Influenza A virus</val></vals>
-          </members>
-          <count><val>1</val></count>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-     <node name="Ellioviricetes">
-      <score><val>1</val></score>
-      <count><val>3</val></count>
-      <rank><val>class</val></rank>
-      <taxon><val href="2497576">2497576</val></taxon>
-      <node name="Bunyavirales">
-       <score><val>1</val></score>
-       <taxon><val href="1980410">1980410</val></taxon>
-       <rank><val>order</val></rank>
-       <count><val>3</val></count>
-       <node name="Nairoviridae">
-        <taxon><val href="1980415">1980415</val></taxon>
-        <rank><val>family</val></rank>
-        <count><val>2</val></count>
-        <score><val>1</val></score>
-        <node name="Orthonairovirus">
-         <score><val>1</val></score>
-         <taxon><val href="1980517">1980517</val></taxon>
-         <rank><val>genus</val></rank>
-         <count><val>2</val></count>
-         <node name="Nairobi sheep disease orthonairovirus">
-          <score><val>1</val></score>
-          <count><val>1</val></count>
-          <taxon><val href="1980526">1980526</val></taxon>
-          <rank><val>species</val></rank>
-          <node name="Nairobi sheep disease virus">
-           <score><val>1</val></score>
-           <taxon><val href="194540">194540</val></taxon>
-           <members>
-            <vals><val>Nairobi sheep disease virus</val></vals>
-           </members>
-           <rank><val>no rank</val></rank>
-           <count><val>1</val></count>
-          </node>
-         </node>
-         <node name="Crimean-Congo hemorrhagic fever orthonairovirus">
-          <score><val>1</val></score>
-          <members>
-           <vals><val>Crimean-Congo hemorrhagic fever orthonairovirus</val></vals>
-          </members>
-          <rank><val>species</val></rank>
-          <taxon><val href="1980519">1980519</val></taxon>
-          <count><val>1</val></count>
-         </node>
-        </node>
-       </node>
-       <node name="Phenuiviridae">
-        <rank><val>family</val></rank>
-        <taxon><val href="1980418">1980418</val></taxon>
-        <count><val>1</val></count>
-        <score><val>1</val></score>
-        <node name="Phlebovirus">
-         <score><val>1</val></score>
-         <taxon><val href="11584">11584</val></taxon>
-         <rank><val>genus</val></rank>
-         <count><val>1</val></count>
-         <node name="Rift Valley fever phlebovirus">
-          <count><val>1</val></count>
-          <taxon><val href="1933187">1933187</val></taxon>
-          <rank><val>species</val></rank>
-          <score><val>1</val></score>
-          <node name="Rift Valley fever virus">
-           <count><val>1</val></count>
-           <taxon><val href="11588">11588</val></taxon>
-           <rank><val>no rank</val></rank>
-           <members>
-            <vals><val>Rift Valley fever virus</val></vals>
-           </members>
-           <score><val>1</val></score>
-          </node>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-    </node>
-   </node>
-   <node name="Reoviridae">
-    <score><val>1</val></score>
-    <taxon><val href="10880">10880</val></taxon>
-    <rank><val>family</val></rank>
-    <count><val>4</val></count>
-    <node name="Sedoreovirinae">
-     <score><val>1</val></score>
-     <taxon><val href="689832">689832</val></taxon>
-     <rank><val>subfamily</val></rank>
-     <count><val>4</val></count>
-     <node name="Orbivirus">
-      <taxon><val href="10892">10892</val></taxon>
+     <rank><val>family</val></rank>
+     <node name="Avibirnavirus">
       <rank><val>genus</val></rank>
+      <score><val>1</val></score>
+      <count><val>1</val></count>
+      <taxon><val href="39751">39751</val></taxon>
+      <node name="Avibirnavirus gumboroense">
+       <taxon><val href="3048151">3048151</val></taxon>
+       <count><val>1</val></count>
+       <score><val>1</val></score>
+       <rank><val>species</val></rank>
+       <node name="Infectious bursal disease virus">
+        <members>
+         <vals><val>Infectious bursal disease virus</val></vals>
+        </members>
+        <taxon><val href="10995">10995</val></taxon>
+        <count><val>1</val></count>
+        <score><val>1</val></score>
+        <rank><val>no rank</val></rank>
+       </node>
+      </node>
+     </node>
+    </node>
+    <node name="Kitrinoviricota">
+     <score><val>1</val></score>
+     <count><val>12</val></count>
+     <taxon><val href="2732406">2732406</val></taxon>
+     <rank><val>phylum</val></rank>
+     <node name="Alsuviricetes">
+      <taxon><val href="2732461">2732461</val></taxon>
       <count><val>4</val></count>
       <score><val>1</val></score>
-      <node name="Epizootic hemorrhagic disease virus">
+      <rank><val>class</val></rank>
+      <node name="Martellivirales">
+       <count><val>4</val></count>
+       <taxon><val href="2732544">2732544</val></taxon>
        <score><val>1</val></score>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Epizootic hemorrhagic disease virus</val></vals>
-       </members>
-       <taxon><val href="40054">40054</val></taxon>
-       <count><val>1</val></count>
-      </node>
-      <node name="African horse sickness virus">
-       <score><val>1</val></score>
-       <count><val>1</val></count>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>African horse sickness virus</val></vals>
-       </members>
-       <taxon><val href="40050">40050</val></taxon>
-      </node>
-      <node name="Bluetongue virus">
-       <score><val>1</val></score>
-       <taxon><val href="40051">40051</val></taxon>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Bluetongue virus</val></vals>
-       </members>
-       <count><val>1</val></count>
-      </node>
-      <node name="Equine encephalosis virus">
-       <count><val>1</val></count>
-       <taxon><val href="201490">201490</val></taxon>
-       <members>
-        <vals><val>Equine encephalosis virus</val></vals>
-       </members>
-       <rank><val>species</val></rank>
-       <score><val>1</val></score>
-      </node>
-     </node>
-    </node>
-   </node>
-   <node name="Picornavirales">
-    <rank><val>order</val></rank>
-    <taxon><val href="464095">464095</val></taxon>
-    <count><val>5</val></count>
-    <score><val>1</val></score>
-    <node name="Picornaviridae">
-     <rank><val>family</val></rank>
-     <taxon><val href="12058">12058</val></taxon>
-     <count><val>5</val></count>
-     <score><val>1</val></score>
-     <node name="Enterovirus">
-      <score><val>1</val></score>
-      <rank><val>genus</val></rank>
-      <taxon><val href="12059">12059</val></taxon>
-      <count><val>1</val></count>
-      <node name="Enterovirus B">
-       <score><val>1</val></score>
-       <count><val>1</val></count>
-       <taxon><val href="138949">138949</val></taxon>
-       <rank><val>species</val></rank>
-       <node name="Swine vesicular disease virus">
-        <members>
-         <vals><val>Swine vesicular disease virus</val></vals>
-        </members>
-        <rank><val>no rank</val></rank>
-        <taxon><val href="12075">12075</val></taxon>
-        <count><val>1</val></count>
+       <rank><val>order</val></rank>
+       <node name="Togaviridae">
+        <rank><val>family</val></rank>
         <score><val>1</val></score>
+        <count><val>4</val></count>
+        <taxon><val href="11018">11018</val></taxon>
+        <node name="Alphavirus">
+         <rank><val>genus</val></rank>
+         <taxon><val href="11019">11019</val></taxon>
+         <count><val>4</val></count>
+         <score><val>1</val></score>
+         <node name="Eastern equine encephalitis virus">
+          <members>
+           <vals><val>Eastern equine encephalitis virus</val></vals>
+          </members>
+          <rank><val>species</val></rank>
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="11021">11021</val></taxon>
+         </node>
+         <node name="Getah virus">
+          <members>
+           <vals><val>Getah virus</val></vals>
+          </members>
+          <rank><val>species</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="59300">59300</val></taxon>
+          <score><val>1</val></score>
+         </node>
+         <node name="Western equine encephalitis virus">
+          <rank><val>species</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="11039">11039</val></taxon>
+          <score><val>1</val></score>
+          <members>
+           <vals><val>Western equine encephalitis virus</val></vals>
+          </members>
+         </node>
+         <node name="Venezuelan equine encephalitis virus">
+          <members>
+           <vals><val>Venezuelan equine encephalitis virus</val></vals>
+          </members>
+          <rank><val>species</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="11036">11036</val></taxon>
+          <score><val>1</val></score>
+         </node>
+        </node>
        </node>
       </node>
      </node>
-     <node name="Senecavirus">
+     <node name="Flasuviricetes">
+      <rank><val>class</val></rank>
+      <count><val>8</val></count>
+      <taxon><val href="2732462">2732462</val></taxon>
       <score><val>1</val></score>
-      <count><val>1</val></count>
-      <rank><val>genus</val></rank>
-      <taxon><val href="586425">586425</val></taxon>
-      <node name="Senecavirus A">
-       <count><val>1</val></count>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Senecavirus A</val></vals>
-       </members>
-       <taxon><val href="390157">390157</val></taxon>
+      <node name="Amarillovirales">
+       <rank><val>order</val></rank>
+       <count><val>8</val></count>
+       <taxon><val href="2732545">2732545</val></taxon>
        <score><val>1</val></score>
-      </node>
-     </node>
-     <node name="Avihepatovirus">
-      <taxon><val href="691955">691955</val></taxon>
-      <rank><val>genus</val></rank>
-      <count><val>1</val></count>
-      <score><val>1</val></score>
-      <node name="Avihepatovirus A">
-       <rank><val>species</val></rank>
-       <taxon><val href="691956">691956</val></taxon>
-       <count><val>1</val></count>
-       <score><val>1</val></score>
-       <node name="Duck hepatitis A virus 1">
-        <count><val>1</val></count>
-        <taxon><val href="1006061">1006061</val></taxon>
-        <members>
-         <vals><val>Duck hepatitis A virus 1</val></vals>
-        </members>
-        <rank><val>no rank</val></rank>
+       <node name="Flaviviridae">
+        <rank><val>family</val></rank>
         <score><val>1</val></score>
+        <count><val>8</val></count>
+        <taxon><val href="11050">11050</val></taxon>
+        <node name="Pestivirus">
+         <rank><val>genus</val></rank>
+         <count><val>3</val></count>
+         <taxon><val href="11095">11095</val></taxon>
+         <score><val>1</val></score>
+         <node name="Pestivirus australiaense">
+          <rank><val>species</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="3052617">3052617</val></taxon>
+          <score><val>1</val></score>
+          <node name="Porcine pestivirus isolate Bungowannah">
+           <rank><val>no rank</val></rank>
+           <taxon><val href="412969">412969</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <members>
+            <vals><val>Porcine pestivirus isolate Bungowannah</val></vals>
+           </members>
+          </node>
+         </node>
+         <node name="Pestivirus suis">
+          <taxon><val href="3052625">3052625</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <rank><val>species</val></rank>
+          <node name="Classical swine fever virus">
+           <members>
+            <vals><val>Classical swine fever virus</val></vals>
+           </members>
+           <score><val>1</val></score>
+           <taxon><val href="11096">11096</val></taxon>
+           <count><val>1</val></count>
+           <rank><val>no rank</val></rank>
+          </node>
+         </node>
+         <node name="Pestivirus tauri">
+          <taxon><val href="3052626">3052626</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <rank><val>species</val></rank>
+          <node name="Bovine viral diarrhea virus 2">
+           <members>
+            <vals><val>Bovine viral diarrhea virus 2</val></vals>
+           </members>
+           <score><val>1</val></score>
+           <taxon><val href="54315">54315</val></taxon>
+           <count><val>1</val></count>
+           <rank><val>no rank</val></rank>
+          </node>
+         </node>
+        </node>
+        <node name="Orthoflavivirus">
+         <rank><val>genus</val></rank>
+         <score><val>1</val></score>
+         <count><val>5</val></count>
+         <taxon><val href="3044782">3044782</val></taxon>
+         <node name="Orthoflavivirus japonicum">
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="3048158">3048158</val></taxon>
+          <rank><val>species</val></rank>
+          <node name="Japanese encephalitis virus">
+           <rank><val>no rank</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="11072">11072</val></taxon>
+           <members>
+            <vals><val>Japanese encephalitis virus</val></vals>
+           </members>
+          </node>
+         </node>
+         <node name="Orthoflavivirus loupingi">
+          <rank><val>species</val></rank>
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="3048184">3048184</val></taxon>
+          <node name="Louping ill virus">
+           <rank><val>no rank</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="11086">11086</val></taxon>
+           <count><val>1</val></count>
+           <members>
+            <vals><val>Louping ill virus</val></vals>
+           </members>
+          </node>
+         </node>
+         <node name="Orthoflavivirus encephalitidis">
+          <rank><val>species</val></rank>
+          <score><val>1</val></score>
+          <taxon><val href="3052465">3052465</val></taxon>
+          <count><val>1</val></count>
+          <node name="Tick-borne encephalitis virus">
+           <members>
+            <vals><val>Tick-borne encephalitis virus</val></vals>
+           </members>
+           <rank><val>no rank</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="11084">11084</val></taxon>
+          </node>
+         </node>
+         <node name="Orthoflavivirus nilense">
+          <score><val>1</val></score>
+          <taxon><val href="3048448">3048448</val></taxon>
+          <count><val>1</val></count>
+          <rank><val>species</val></rank>
+          <node name="West Nile virus">
+           <members>
+            <vals><val>West Nile virus</val></vals>
+           </members>
+           <taxon><val href="11082">11082</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>no rank</val></rank>
+          </node>
+         </node>
+         <node name="Orthoflavivirus wesselsbronense">
+          <rank><val>species</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="3048447">3048447</val></taxon>
+          <score><val>1</val></score>
+          <node name="Wesselsbron virus">
+           <members>
+            <vals><val>Wesselsbron virus</val></vals>
+           </members>
+           <rank><val>no rank</val></rank>
+           <taxon><val href="164416">164416</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+          </node>
+         </node>
+        </node>
        </node>
       </node>
      </node>
-     <node name="Teschovirus">
-      <taxon><val href="118139">118139</val></taxon>
-      <rank><val>genus</val></rank>
-      <count><val>1</val></count>
+    </node>
+    <node name="Duplornaviricota">
+     <score><val>1</val></score>
+     <count><val>4</val></count>
+     <taxon><val href="2732405">2732405</val></taxon>
+     <rank><val>phylum</val></rank>
+     <node name="Resentoviricetes">
+      <taxon><val href="2732459">2732459</val></taxon>
+      <count><val>4</val></count>
       <score><val>1</val></score>
-      <node name="Teschovirus A">
+      <rank><val>class</val></rank>
+      <node name="Reovirales">
        <score><val>1</val></score>
-       <count><val>1</val></count>
-       <members>
-        <vals><val>Teschovirus A</val></vals>
-       </members>
-       <rank><val>species</val></rank>
-       <taxon><val href="118140">118140</val></taxon>
-      </node>
-     </node>
-     <node name="Aphthovirus">
-      <rank><val>genus</val></rank>
-      <taxon><val href="12109">12109</val></taxon>
-      <count><val>1</val></count>
-      <score><val>1</val></score>
-      <node name="Foot-and-mouth disease virus">
-       <count><val>1</val></count>
-       <members>
-        <vals><val>Foot-and-mouth disease virus</val></vals>
-       </members>
-       <rank><val>species</val></rank>
-       <taxon><val href="12110">12110</val></taxon>
-       <score><val>1</val></score>
+       <taxon><val href="2732541">2732541</val></taxon>
+       <count><val>4</val></count>
+       <rank><val>order</val></rank>
+       <node name="Sedoreoviridae">
+        <rank><val>family</val></rank>
+        <count><val>4</val></count>
+        <taxon><val href="2946186">2946186</val></taxon>
+        <score><val>1</val></score>
+        <node name="Orbivirus">
+         <score><val>1</val></score>
+         <count><val>4</val></count>
+         <taxon><val href="10892">10892</val></taxon>
+         <rank><val>genus</val></rank>
+         <node name="Epizootic hemorrhagic disease virus">
+          <score><val>1</val></score>
+          <taxon><val href="40054">40054</val></taxon>
+          <count><val>1</val></count>
+          <rank><val>species</val></rank>
+          <members>
+           <vals><val>Epizootic hemorrhagic disease virus</val></vals>
+          </members>
+         </node>
+         <node name="African horse sickness virus">
+          <rank><val>species</val></rank>
+          <taxon><val href="40050">40050</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <members>
+           <vals><val>African horse sickness virus</val></vals>
+          </members>
+         </node>
+         <node name="Bluetongue virus">
+          <rank><val>species</val></rank>
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="40051">40051</val></taxon>
+          <members>
+           <vals><val>Bluetongue virus</val></vals>
+          </members>
+         </node>
+         <node name="Equine encephalosis virus">
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="201490">201490</val></taxon>
+          <rank><val>species</val></rank>
+          <members>
+           <vals><val>Equine encephalosis virus</val></vals>
+          </members>
+         </node>
+        </node>
+       </node>
       </node>
      </node>
     </node>
-   </node>
-   <node name="Flaviviridae">
-    <count><val>8</val></count>
-    <rank><val>family</val></rank>
-    <taxon><val href="11050">11050</val></taxon>
-    <score><val>1</val></score>
-    <node name="Pestivirus">
+    <node name="Pisuviricota">
      <score><val>1</val></score>
-     <count><val>3</val></count>
-     <taxon><val href="11095">11095</val></taxon>
-     <rank><val>genus</val></rank>
-     <node name="Pestivirus B">
-      <score><val>1</val></score>
+     <count><val>11</val></count>
+     <taxon><val href="2732408">2732408</val></taxon>
+     <rank><val>phylum</val></rank>
+     <node name="Stelpaviricetes">
       <count><val>1</val></count>
-      <taxon><val href="2170081">2170081</val></taxon>
-      <rank><val>species</val></rank>
-      <node name="Bovine viral diarrhea virus 2">
-       <count><val>1</val></count>
-       <taxon><val href="54315">54315</val></taxon>
-       <members>
-        <vals><val>Bovine viral diarrhea virus 2</val></vals>
-       </members>
-       <rank><val>no rank</val></rank>
+      <taxon><val href="2732507">2732507</val></taxon>
+      <score><val>1</val></score>
+      <rank><val>class</val></rank>
+      <node name="Stellavirales">
+       <rank><val>order</val></rank>
        <score><val>1</val></score>
+       <taxon><val href="2732551">2732551</val></taxon>
+       <count><val>1</val></count>
+       <node name="Astroviridae">
+        <score><val>1</val></score>
+        <taxon><val href="39733">39733</val></taxon>
+        <count><val>1</val></count>
+        <rank><val>family</val></rank>
+        <node name="Avastrovirus">
+         <count><val>1</val></count>
+         <taxon><val href="249589">249589</val></taxon>
+         <score><val>1</val></score>
+         <rank><val>genus</val></rank>
+         <node name="Avastrovirus 3">
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="1239439">1239439</val></taxon>
+          <rank><val>species</val></rank>
+          <node name="Duck astrovirus">
+           <members>
+            <vals><val>Duck astrovirus</val></vals>
+           </members>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="1239441">1239441</val></taxon>
+           <rank><val>no rank</val></rank>
+          </node>
+         </node>
+        </node>
+       </node>
       </node>
      </node>
-     <node name="Pestivirus F">
+     <node name="Pisoniviricetes">
       <score><val>1</val></score>
-      <count><val>1</val></count>
-      <taxon><val href="2170085">2170085</val></taxon>
-      <rank><val>species</val></rank>
-      <node name="Porcine pestivirus isolate Bungowannah">
-       <taxon><val href="412969">412969</val></taxon>
-       <members>
-        <vals><val>Porcine pestivirus isolate Bungowannah</val></vals>
-       </members>
-       <rank><val>no rank</val></rank>
-       <count><val>1</val></count>
+      <taxon><val href="2732506">2732506</val></taxon>
+      <count><val>10</val></count>
+      <rank><val>class</val></rank>
+      <node name="Picornavirales">
+       <rank><val>order</val></rank>
+       <taxon><val href="464095">464095</val></taxon>
+       <count><val>6</val></count>
        <score><val>1</val></score>
+       <node name="Caliciviridae">
+        <score><val>1</val></score>
+        <taxon><val href="11974">11974</val></taxon>
+        <count><val>1</val></count>
+        <rank><val>family</val></rank>
+        <node name="Vesivirus">
+         <rank><val>genus</val></rank>
+         <score><val>1</val></score>
+         <count><val>1</val></count>
+         <taxon><val href="95337">95337</val></taxon>
+         <node name="Vesicular exanthema of swine virus">
+          <members>
+           <vals><val>Vesicular exanthema of swine virus</val></vals>
+          </members>
+          <rank><val>species</val></rank>
+          <taxon><val href="35612">35612</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+         </node>
+        </node>
+       </node>
+       <node name="Picornaviridae">
+        <score><val>1</val></score>
+        <taxon><val href="12058">12058</val></taxon>
+        <count><val>5</val></count>
+        <rank><val>family</val></rank>
+        <node name="Ensavirinae">
+         <taxon><val href="2946630">2946630</val></taxon>
+         <count><val>1</val></count>
+         <score><val>1</val></score>
+         <rank><val>subfamily</val></rank>
+         <node name="Enterovirus">
+          <score><val>1</val></score>
+          <taxon><val href="12059">12059</val></taxon>
+          <count><val>1</val></count>
+          <rank><val>genus</val></rank>
+          <node name="Enterovirus B">
+           <taxon><val href="138949">138949</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+           <node name="Swine vesicular disease virus">
+            <members>
+             <vals><val>Swine vesicular disease virus</val></vals>
+            </members>
+            <rank><val>no rank</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="12075">12075</val></taxon>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node name="Caphthovirinae">
+         <rank><val>subfamily</val></rank>
+         <count><val>3</val></count>
+         <taxon><val href="2946627">2946627</val></taxon>
+         <score><val>1</val></score>
+         <node name="Teschovirus">
+          <rank><val>genus</val></rank>
+          <score><val>1</val></score>
+          <taxon><val href="118139">118139</val></taxon>
+          <count><val>1</val></count>
+          <node name="Teschovirus A">
+           <members>
+            <vals><val>Teschovirus A</val></vals>
+           </members>
+           <score><val>1</val></score>
+           <taxon><val href="118140">118140</val></taxon>
+           <count><val>1</val></count>
+           <rank><val>species</val></rank>
+          </node>
+         </node>
+         <node name="Senecavirus">
+          <rank><val>genus</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="586425">586425</val></taxon>
+          <score><val>1</val></score>
+          <node name="Senecavirus A">
+           <members>
+            <vals><val>Senecavirus A</val></vals>
+           </members>
+           <count><val>1</val></count>
+           <taxon><val href="390157">390157</val></taxon>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+          </node>
+         </node>
+         <node name="Aphthovirus">
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="12109">12109</val></taxon>
+          <rank><val>genus</val></rank>
+          <node name="Foot-and-mouth disease virus">
+           <count><val>1</val></count>
+           <taxon><val href="12110">12110</val></taxon>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+           <members>
+            <vals><val>Foot-and-mouth disease virus</val></vals>
+           </members>
+          </node>
+         </node>
+        </node>
+        <node name="Paavivirinae">
+         <score><val>1</val></score>
+         <count><val>1</val></count>
+         <taxon><val href="2946640">2946640</val></taxon>
+         <rank><val>subfamily</val></rank>
+         <node name="Avihepatovirus">
+          <rank><val>genus</val></rank>
+          <taxon><val href="691955">691955</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <node name="Avihepatovirus A">
+           <rank><val>species</val></rank>
+           <taxon><val href="691956">691956</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <node name="Duck hepatitis A virus 1">
+            <rank><val>no rank</val></rank>
+            <taxon><val href="1006061">1006061</val></taxon>
+            <count><val>1</val></count>
+            <score><val>1</val></score>
+            <members>
+             <vals><val>avihepatovirus A1</val></vals>
+            </members>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
       </node>
-     </node>
-     <node name="Pestivirus C">
-      <score><val>1</val></score>
-      <taxon><val href="2170082">2170082</val></taxon>
-      <rank><val>species</val></rank>
-      <count><val>1</val></count>
-      <node name="Classical swine fever virus">
+      <node name="Nidovirales">
+       <rank><val>order</val></rank>
        <score><val>1</val></score>
-       <count><val>1</val></count>
-       <taxon><val href="11096">11096</val></taxon>
-       <rank><val>no rank</val></rank>
-       <members>
-        <vals><val>Classical swine fever virus</val></vals>
-       </members>
-      </node>
-     </node>
-    </node>
-    <node name="Flavivirus">
-     <score><val>1</val></score>
-     <count><val>5</val></count>
-     <rank><val>genus</val></rank>
-     <taxon><val href="11051">11051</val></taxon>
-     <node name="Louping ill virus">
-      <score><val>1</val></score>
-      <count><val>1</val></count>
-      <members>
-       <vals><val>Louping ill virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <taxon><val href="11086">11086</val></taxon>
-     </node>
-     <node name="West Nile virus">
-      <score><val>1</val></score>
-      <count><val>1</val></count>
-      <taxon><val href="11082">11082</val></taxon>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>West Nile virus</val></vals>
-      </members>
-     </node>
-     <node name="Tick-borne encephalitis virus">
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Tick-borne encephalitis virus</val></vals>
-      </members>
-      <taxon><val href="11084">11084</val></taxon>
-      <count><val>1</val></count>
-      <score><val>1</val></score>
-     </node>
-     <node name="Wesselsbron virus">
-      <score><val>1</val></score>
-      <rank><val>species</val></rank>
-      <members>
-       <vals><val>Wesselsbron virus</val></vals>
-      </members>
-      <taxon><val href="164416">164416</val></taxon>
-      <count><val>1</val></count>
-     </node>
-     <node name="Japanese encephalitis virus">
-      <members>
-       <vals><val>Japanese encephalitis virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <taxon><val href="11072">11072</val></taxon>
-      <count><val>1</val></count>
-      <score><val>1</val></score>
-     </node>
-    </node>
-   </node>
-   <node name="Astroviridae">
-    <score><val>1</val></score>
-    <count><val>1</val></count>
-    <taxon><val href="39733">39733</val></taxon>
-    <rank><val>family</val></rank>
-    <node name="Avastrovirus">
-     <score><val>1</val></score>
-     <taxon><val href="249589">249589</val></taxon>
-     <rank><val>genus</val></rank>
-     <count><val>1</val></count>
-     <node name="Avastrovirus 3">
-      <score><val>1</val></score>
-      <rank><val>species</val></rank>
-      <taxon><val href="1239439">1239439</val></taxon>
-      <count><val>1</val></count>
-      <node name="Duck astrovirus">
-       <count><val>1</val></count>
-       <taxon><val href="1239441">1239441</val></taxon>
-       <rank><val>no rank</val></rank>
-       <members>
-        <vals><val>Duck astrovirus</val></vals>
-       </members>
-       <score><val>1</val></score>
-      </node>
-     </node>
-    </node>
-   </node>
-   <node name="Nidovirales">
-    <score><val>1</val></score>
-    <rank><val>order</val></rank>
-    <taxon><val href="76804">76804</val></taxon>
-    <count><val>4</val></count>
-    <node name="Cornidovirineae">
-     <score><val>1</val></score>
-     <count><val>2</val></count>
-     <rank><val>suborder</val></rank>
-     <taxon><val href="2499399">2499399</val></taxon>
-     <node name="Coronaviridae">
-      <score><val>1</val></score>
-      <count><val>2</val></count>
-      <taxon><val href="11118">11118</val></taxon>
-      <rank><val>family</val></rank>
-      <node name="Orthocoronavirinae">
-       <score><val>1</val></score>
-       <rank><val>subfamily</val></rank>
-       <taxon><val href="2501931">2501931</val></taxon>
-       <count><val>2</val></count>
-       <node name="Alphacoronavirus">
+       <count><val>4</val></count>
+       <taxon><val href="76804">76804</val></taxon>
+       <node name="Cornidovirineae">
+        <rank><val>suborder</val></rank>
+        <score><val>1</val></score>
+        <taxon><val href="2499399">2499399</val></taxon>
         <count><val>2</val></count>
-        <rank><val>genus</val></rank>
-        <taxon><val href="693996">693996</val></taxon>
-        <score><val>1</val></score>
-        <node name="Tegacovirus">
+        <node name="Coronaviridae">
+         <taxon><val href="11118">11118</val></taxon>
+         <count><val>2</val></count>
          <score><val>1</val></score>
-         <count><val>1</val></count>
-         <taxon><val href="2509514">2509514</val></taxon>
-         <rank><val>subgenus</val></rank>
-         <node name="Alphacoronavirus 1">
+         <rank><val>family</val></rank>
+         <node name="Orthocoronavirinae">
+          <rank><val>subfamily</val></rank>
           <score><val>1</val></score>
-          <count><val>1</val></count>
-          <rank><val>species</val></rank>
-          <taxon><val href="693997">693997</val></taxon>
-          <node name="Transmissible gastroenteritis virus">
-           <taxon><val href="11149">11149</val></taxon>
-           <members>
-            <vals><val>Transmissible gastroenteritis virus</val></vals>
-           </members>
-           <rank><val>no rank</val></rank>
-           <count><val>1</val></count>
+          <taxon><val href="2501931">2501931</val></taxon>
+          <count><val>2</val></count>
+          <node name="Alphacoronavirus">
+           <rank><val>genus</val></rank>
+           <count><val>2</val></count>
+           <taxon><val href="693996">693996</val></taxon>
            <score><val>1</val></score>
-          </node>
-         </node>
-        </node>
-        <node name="Pedacovirus">
-         <count><val>1</val></count>
-         <taxon><val href="2509505">2509505</val></taxon>
-         <rank><val>subgenus</val></rank>
-         <score><val>1</val></score>
-         <node name="Porcine epidemic diarrhea virus">
-          <taxon><val href="28295">28295</val></taxon>
-          <members>
-           <vals><val>Porcine epidemic diarrhea virus</val></vals>
-          </members>
-          <rank><val>species</val></rank>
-          <count><val>1</val></count>
-          <score><val>1</val></score>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-    </node>
-    <node name="Arnidovirineae">
-     <score><val>1</val></score>
-     <count><val>2</val></count>
-     <rank><val>suborder</val></rank>
-     <taxon><val href="2499398">2499398</val></taxon>
-     <node name="Arteriviridae">
-      <score><val>1</val></score>
-      <rank><val>family</val></rank>
-      <taxon><val href="76803">76803</val></taxon>
-      <count><val>2</val></count>
-      <node name="Variarterivirinae">
-       <score><val>1</val></score>
-       <count><val>1</val></count>
-       <taxon><val href="2499607">2499607</val></taxon>
-       <rank><val>subfamily</val></rank>
-       <node name="Betaarterivirus">
-        <score><val>1</val></score>
-        <rank><val>genus</val></rank>
-        <taxon><val href="2499674">2499674</val></taxon>
-        <count><val>1</val></count>
-        <node name="Eurpobartevirus">
-         <taxon><val href="2499679">2499679</val></taxon>
-         <rank><val>subgenus</val></rank>
-         <count><val>1</val></count>
-         <score><val>1</val></score>
-         <node name="Betaarterivirus suid 1">
-          <rank><val>species</val></rank>
-          <taxon><val href="2499680">2499680</val></taxon>
-          <count><val>1</val></count>
-          <score><val>1</val></score>
-          <node name="Porcine reproductive and respiratory syndrome virus 1">
-           <count><val>1</val></count>
-           <rank><val>no rank</val></rank>
-           <members>
-            <vals><val>Porcine reproductive and respiratory syndrome virus 1</val></vals>
-           </members>
-           <taxon><val href="1965066">1965066</val></taxon>
-           <score><val>1</val></score>
+           <node name="Pedacovirus">
+            <rank><val>subgenus</val></rank>
+            <count><val>1</val></count>
+            <taxon><val href="2509505">2509505</val></taxon>
+            <score><val>1</val></score>
+            <node name="Porcine epidemic diarrhea virus">
+             <taxon><val href="28295">28295</val></taxon>
+             <count><val>1</val></count>
+             <score><val>1</val></score>
+             <rank><val>species</val></rank>
+             <members>
+              <vals><val>Porcine epidemic diarrhea virus</val></vals>
+             </members>
+            </node>
+           </node>
+           <node name="Tegacovirus">
+            <rank><val>subgenus</val></rank>
+            <taxon><val href="2509514">2509514</val></taxon>
+            <count><val>1</val></count>
+            <score><val>1</val></score>
+            <node name="Alphacoronavirus 1">
+             <taxon><val href="693997">693997</val></taxon>
+             <count><val>1</val></count>
+             <score><val>1</val></score>
+             <rank><val>species</val></rank>
+             <node name="Transmissible gastroenteritis virus">
+              <members>
+               <vals><val>Transmissible gastroenteritis virus</val></vals>
+              </members>
+              <rank><val>no rank</val></rank>
+              <score><val>1</val></score>
+              <count><val>1</val></count>
+              <taxon><val href="11149">11149</val></taxon>
+             </node>
+            </node>
+           </node>
           </node>
          </node>
         </node>
        </node>
-      </node>
-      <node name="Equarterivirinae">
-       <rank><val>subfamily</val></rank>
-       <taxon><val href="2499604">2499604</val></taxon>
-       <count><val>1</val></count>
-       <score><val>1</val></score>
-       <node name="Alphaarterivirus">
-        <count><val>1</val></count>
-        <taxon><val href="2499610">2499610</val></taxon>
-        <rank><val>genus</val></rank>
+       <node name="Arnidovirineae">
+        <count><val>2</val></count>
+        <taxon><val href="2499398">2499398</val></taxon>
         <score><val>1</val></score>
-        <node name="Alphaarterivirus equid">
+        <rank><val>suborder</val></rank>
+        <node name="Arteriviridae">
+         <rank><val>family</val></rank>
          <score><val>1</val></score>
-         <taxon><val href="2499620">2499620</val></taxon>
-         <rank><val>species</val></rank>
+         <taxon><val href="76803">76803</val></taxon>
+         <count><val>2</val></count>
+         <node name="Variarterivirinae">
+          <rank><val>subfamily</val></rank>
+          <score><val>1</val></score>
+          <taxon><val href="2499607">2499607</val></taxon>
+          <count><val>1</val></count>
+          <node name="Betaarterivirus">
+           <rank><val>genus</val></rank>
+           <count><val>1</val></count>
+           <taxon><val href="2499674">2499674</val></taxon>
+           <score><val>1</val></score>
+           <node name="Eurpobartevirus">
+            <score><val>1</val></score>
+            <taxon><val href="2499679">2499679</val></taxon>
+            <count><val>1</val></count>
+            <rank><val>subgenus</val></rank>
+            <node name="Betaarterivirus suid 1">
+             <members>
+              <vals><val>Betaarterivirus suid 1</val></vals>
+             </members>
+             <count><val>1</val></count>
+             <taxon><val href="2499680">2499680</val></taxon>
+             <score><val>1</val></score>
+             <rank><val>species</val></rank>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node name="Equarterivirinae">
+          <rank><val>subfamily</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="2499604">2499604</val></taxon>
+          <score><val>1</val></score>
+          <node name="Alphaarterivirus">
+           <taxon><val href="2499610">2499610</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>genus</val></rank>
+           <node name="Alphaarterivirus equid">
+            <count><val>1</val></count>
+            <taxon><val href="2499620">2499620</val></taxon>
+            <score><val>1</val></score>
+            <rank><val>species</val></rank>
+            <node name="Equine arteritis virus">
+             <members>
+              <vals><val>Equine arteritis virus</val></vals>
+             </members>
+             <rank><val>no rank</val></rank>
+             <taxon><val href="11047">11047</val></taxon>
+             <count><val>1</val></count>
+             <score><val>1</val></score>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+    <node name="Negarnaviricota">
+     <score><val>1</val></score>
+     <count><val>18</val></count>
+     <taxon><val href="2497569">2497569</val></taxon>
+     <rank><val>phylum</val></rank>
+     <node name="Polyploviricotina">
+      <rank><val>subphylum</val></rank>
+      <score><val>1</val></score>
+      <taxon><val href="2497571">2497571</val></taxon>
+      <count><val>4</val></count>
+      <node name="Ellioviricetes">
+       <taxon><val href="2497576">2497576</val></taxon>
+       <count><val>3</val></count>
+       <score><val>1</val></score>
+       <rank><val>class</val></rank>
+       <node name="Bunyavirales">
+        <rank><val>order</val></rank>
+        <score><val>1</val></score>
+        <count><val>3</val></count>
+        <taxon><val href="1980410">1980410</val></taxon>
+        <node name="Nairoviridae">
+         <rank><val>family</val></rank>
+         <count><val>2</val></count>
+         <taxon><val href="1980415">1980415</val></taxon>
+         <score><val>1</val></score>
+         <node name="Orthonairovirus">
+          <rank><val>genus</val></rank>
+          <score><val>1</val></score>
+          <taxon><val href="1980517">1980517</val></taxon>
+          <count><val>2</val></count>
+          <node name="Orthonairovirus nairobiense">
+           <taxon><val href="3052529">3052529</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+           <node name="Nairobi sheep disease virus">
+            <rank><val>no rank</val></rank>
+            <taxon><val href="194540">194540</val></taxon>
+            <count><val>1</val></count>
+            <score><val>1</val></score>
+            <members>
+             <vals><val>Nairobi sheep disease virus</val></vals>
+            </members>
+           </node>
+          </node>
+          <node name="Orthonairovirus haemorrhagiae">
+           <members>
+            <vals><val>Orthonairovirus haemorrhagiae</val></vals>
+           </members>
+           <count><val>1</val></count>
+           <taxon><val href="3052518">3052518</val></taxon>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+          </node>
+         </node>
+        </node>
+        <node name="Phenuiviridae">
+         <rank><val>family</val></rank>
          <count><val>1</val></count>
-         <node name="Equine arteritis virus">
+         <taxon><val href="1980418">1980418</val></taxon>
+         <score><val>1</val></score>
+         <node name="Phlebovirus">
+          <rank><val>genus</val></rank>
+          <taxon><val href="11584">11584</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <node name="Phlebovirus riftense">
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="3052676">3052676</val></taxon>
+           <rank><val>species</val></rank>
+           <node name="Rift Valley fever virus">
+            <rank><val>no rank</val></rank>
+            <count><val>1</val></count>
+            <taxon><val href="11588">11588</val></taxon>
+            <score><val>1</val></score>
+            <members>
+             <vals><val>Rift Valley fever virus</val></vals>
+            </members>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node name="Insthoviricetes">
+       <score><val>1</val></score>
+       <count><val>1</val></count>
+       <taxon><val href="2497577">2497577</val></taxon>
+       <rank><val>class</val></rank>
+       <node name="Articulavirales">
+        <taxon><val href="2499411">2499411</val></taxon>
+        <count><val>1</val></count>
+        <score><val>1</val></score>
+        <rank><val>order</val></rank>
+        <node name="Orthomyxoviridae">
+         <rank><val>family</val></rank>
+         <taxon><val href="11308">11308</val></taxon>
+         <count><val>1</val></count>
+         <score><val>1</val></score>
+         <node name="Alphainfluenzavirus">
+          <count><val>1</val></count>
+          <taxon><val href="197911">197911</val></taxon>
+          <score><val>1</val></score>
+          <rank><val>genus</val></rank>
+          <node name="Alphainfluenzavirus influenzae">
+           <rank><val>species</val></rank>
+           <taxon><val href="2955291">2955291</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <node name="Influenza A virus">
+            <members>
+             <vals><val>Influenza A virus</val></vals>
+            </members>
+            <score><val>1</val></score>
+            <taxon><val href="11320">11320</val></taxon>
+            <count><val>1</val></count>
+            <rank><val>no rank</val></rank>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+     <node name="Haploviricotina">
+      <score><val>1</val></score>
+      <count><val>14</val></count>
+      <taxon><val href="2497570">2497570</val></taxon>
+      <rank><val>subphylum</val></rank>
+      <node name="Monjiviricetes">
+       <rank><val>class</val></rank>
+       <score><val>1</val></score>
+       <taxon><val href="2497574">2497574</val></taxon>
+       <count><val>14</val></count>
+       <node name="Mononegavirales">
+        <taxon><val href="11157">11157</val></taxon>
+        <count><val>14</val></count>
+        <score><val>1</val></score>
+        <rank><val>order</val></rank>
+        <node name="Bornaviridae">
+         <score><val>1</val></score>
+         <taxon><val href="178830">178830</val></taxon>
+         <count><val>1</val></count>
+         <rank><val>family</val></rank>
+         <node name="Orthobornavirus">
+          <count><val>1</val></count>
+          <taxon><val href="186458">186458</val></taxon>
+          <score><val>1</val></score>
+          <rank><val>genus</val></rank>
+          <node name="Orthobornavirus bornaense">
+           <score><val>1</val></score>
+           <taxon><val href="1714619">1714619</val></taxon>
+           <count><val>1</val></count>
+           <rank><val>species</val></rank>
+           <node name="Borna disease virus 1">
+            <rank><val>no rank</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="1714621">1714621</val></taxon>
+            <members>
+             <vals><val>Borna disease virus 1</val></vals>
+            </members>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node name="Paramyxoviridae">
+         <rank><val>family</val></rank>
+         <count><val>6</val></count>
+         <taxon><val href="11158">11158</val></taxon>
+         <score><val>1</val></score>
+         <node name="Avulavirinae">
+          <rank><val>subfamily</val></rank>
+          <taxon><val href="2560069">2560069</val></taxon>
+          <count><val>1</val></count>
+          <score><val>1</val></score>
+          <node name="Orthoavulavirus">
+           <taxon><val href="2560194">2560194</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>genus</val></rank>
+           <node name="Orthoavulavirus javaense">
+            <rank><val>species</val></rank>
+            <taxon><val href="3051375">3051375</val></taxon>
+            <count><val>1</val></count>
+            <score><val>1</val></score>
+            <node name="Avian orthoavulavirus 1">
+             <score><val>1</val></score>
+             <taxon><val href="2560319">2560319</val></taxon>
+             <count><val>1</val></count>
+             <rank><val>no rank</val></rank>
+             <members>
+              <vals><val>avian paramyxovirus 1</val></vals>
+             </members>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node name="Rubulavirinae">
+          <rank><val>subfamily</val></rank>
+          <count><val>1</val></count>
+          <taxon><val href="2560080">2560080</val></taxon>
+          <score><val>1</val></score>
+          <node name="Pararubulavirus">
+           <rank><val>genus</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="2560200">2560200</val></taxon>
+           <count><val>1</val></count>
+           <node name="Pararubulavirus menangleense">
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="3052599">3052599</val></taxon>
+            <node name="Menangle virus">
+             <members>
+              <vals><val>Menangle virus</val></vals>
+             </members>
+             <score><val>1</val></score>
+             <count><val>1</val></count>
+             <taxon><val href="152219">152219</val></taxon>
+             <rank><val>no rank</val></rank>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node name="Orthoparamyxovirinae">
+          <count><val>4</val></count>
+          <taxon><val href="2560076">2560076</val></taxon>
+          <score><val>1</val></score>
+          <rank><val>subfamily</val></rank>
+          <node name="Morbillivirus">
+           <rank><val>genus</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="11229">11229</val></taxon>
+           <count><val>2</val></count>
+           <node name="Morbillivirus caprinae">
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <taxon><val href="3052343">3052343</val></taxon>
+            <count><val>1</val></count>
+            <node name="Peste des petits ruminants virus">
+             <members>
+              <vals><val>Peste des petits ruminants virus</val></vals>
+             </members>
+             <rank><val>no rank</val></rank>
+             <score><val>1</val></score>
+             <count><val>1</val></count>
+             <taxon><val href="2593991">2593991</val></taxon>
+            </node>
+           </node>
+           <node name="Morbillivirus pecoris">
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <taxon><val href="3052346">3052346</val></taxon>
+            <count><val>1</val></count>
+            <node name="Rinderpest morbillivirus">
+             <rank><val>no rank</val></rank>
+             <score><val>1</val></score>
+             <taxon><val href="11241">11241</val></taxon>
+             <count><val>1</val></count>
+             <members>
+              <vals><val>Rinderpest morbillivirus</val></vals>
+             </members>
+            </node>
+           </node>
+          </node>
+          <node name="Henipavirus">
+           <rank><val>genus</val></rank>
+           <taxon><val href="260964">260964</val></taxon>
+           <count><val>2</val></count>
+           <score><val>1</val></score>
+           <node name="Henipavirus hendraense">
+            <members>
+             <vals><val>Henipavirus hendraense</val></vals>
+            </members>
+            <rank><val>species</val></rank>
+            <count><val>1</val></count>
+            <taxon><val href="3052223">3052223</val></taxon>
+            <score><val>1</val></score>
+           </node>
+           <node name="Henipavirus nipahense">
+            <members>
+             <vals><val>Henipavirus nipahense</val></vals>
+            </members>
+            <rank><val>species</val></rank>
+            <count><val>1</val></count>
+            <taxon><val href="3052225">3052225</val></taxon>
+            <score><val>1</val></score>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node name="Rhabdoviridae">
+         <rank><val>family</val></rank>
+         <score><val>1</val></score>
+         <count><val>6</val></count>
+         <taxon><val href="11270">11270</val></taxon>
+         <node name="Alpharhabdovirinae">
+          <rank><val>subfamily</val></rank>
+          <count><val>6</val></count>
+          <taxon><val href="2842407">2842407</val></taxon>
+          <score><val>1</val></score>
+          <node name="Lyssavirus">
+           <score><val>1</val></score>
+           <taxon><val href="11286">11286</val></taxon>
+           <count><val>2</val></count>
+           <rank><val>genus</val></rank>
+           <node name="Lyssavirus rabies">
+            <members>
+             <vals><val>Lyssavirus rabies</val></vals>
+            </members>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="11292">11292</val></taxon>
+            <rank><val>species</val></rank>
+           </node>
+           <node name="Lyssavirus australis">
+            <members>
+             <vals><val>Lyssavirus australis</val></vals>
+            </members>
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <taxon><val href="90961">90961</val></taxon>
+            <count><val>1</val></count>
+           </node>
+          </node>
+          <node name="Vesiculovirus">
+           <rank><val>genus</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="11271">11271</val></taxon>
+           <count><val>4</val></count>
+           <node name="Vesiculovirus indiana">
+            <members>
+             <vals><val>Vesiculovirus indiana</val></vals>
+            </members>
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="1972577">1972577</val></taxon>
+           </node>
+           <node name="Vesiculovirus alagoas">
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <taxon><val href="1972579">1972579</val></taxon>
+            <count><val>1</val></count>
+            <members>
+             <vals><val>Vesiculovirus alagoas</val></vals>
+            </members>
+           </node>
+           <node name="Vesiculovirus cocal">
+            <members>
+             <vals><val>Vesiculovirus cocal</val></vals>
+            </members>
+            <score><val>1</val></score>
+            <taxon><val href="1972572">1972572</val></taxon>
+            <count><val>1</val></count>
+            <rank><val>species</val></rank>
+           </node>
+           <node name="Vesiculovirus newjersey">
+            <members>
+             <vals><val>Vesiculovirus newjersey</val></vals>
+            </members>
+            <rank><val>species</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="1972578">1972578</val></taxon>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node name="Pneumoviridae">
+         <score><val>1</val></score>
+         <taxon><val href="11244">11244</val></taxon>
+         <count><val>1</val></count>
+         <rank><val>family</val></rank>
+         <node name="Metapneumovirus">
           <score><val>1</val></score>
           <count><val>1</val></count>
-          <taxon><val href="11047">11047</val></taxon>
-          <rank><val>no rank</val></rank>
-          <members>
-           <vals><val>Equine arteritis virus</val></vals>
-          </members>
+          <taxon><val href="162387">162387</val></taxon>
+          <rank><val>genus</val></rank>
+          <node name="Metapneumovirus avis">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="3047384">3047384</val></taxon>
+           <node name="Avian metapneumovirus">
+            <members>
+             <vals><val>Avian metapneumovirus</val></vals>
+            </members>
+            <count><val>1</val></count>
+            <taxon><val href="38525">38525</val></taxon>
+            <score><val>1</val></score>
+            <rank><val>no rank</val></rank>
+           </node>
+          </node>
          </node>
         </node>
        </node>
@@ -7608,143 +7799,263 @@ function zoomOut()
      </node>
     </node>
    </node>
-   <node name="Birnaviridae">
-    <count><val>1</val></count>
-    <taxon><val href="10993">10993</val></taxon>
-    <rank><val>family</val></rank>
-    <score><val>1</val></score>
-    <node name="Avibirnavirus">
-     <taxon><val href="39751">39751</val></taxon>
-     <rank><val>genus</val></rank>
-     <count><val>1</val></count>
-     <score><val>1</val></score>
-     <node name="Infectious bursal disease virus">
-      <count><val>1</val></count>
-      <members>
-       <vals><val>Infectious bursal disease virus</val></vals>
-      </members>
-      <rank><val>species</val></rank>
-      <taxon><val href="10995">10995</val></taxon>
-      <score><val>1</val></score>
-     </node>
-    </node>
-   </node>
-  </node>
-  <node name="Circoviridae">
-   <count><val>1</val></count>
-   <rank><val>family</val></rank>
-   <taxon><val href="39724">39724</val></taxon>
-   <score><val>1</val></score>
-   <node name="Circovirus">
-    <score><val>1</val></score>
-    <count><val>1</val></count>
-    <rank><val>genus</val></rank>
-    <taxon><val href="39725">39725</val></taxon>
-    <node name="Porcine circovirus 2">
-     <count><val>1</val></count>
-     <members>
-      <vals><val>Porcine circovirus 2</val></vals>
-     </members>
-     <rank><val>species</val></rank>
-     <taxon><val href="85708">85708</val></taxon>
-     <score><val>1</val></score>
-    </node>
-   </node>
-  </node>
-  <node name="Asfarviridae">
-   <score><val>1</val></score>
-   <count><val>1</val></count>
-   <rank><val>family</val></rank>
-   <taxon><val href="137992">137992</val></taxon>
-   <node name="Asfivirus">
-    <count><val>1</val></count>
-    <rank><val>genus</val></rank>
-    <taxon><val href="39743">39743</val></taxon>
-    <score><val>1</val></score>
-    <node name="African swine fever virus">
-     <count><val>1</val></count>
-     <taxon><val href="10497">10497</val></taxon>
-     <members>
-      <vals><val>African swine fever virus</val></vals>
-     </members>
-     <rank><val>species</val></rank>
-     <score><val>1</val></score>
-    </node>
-   </node>
-  </node>
-  <node name="Herpesvirales">
-   <score><val>1</val></score>
-   <rank><val>order</val></rank>
-   <taxon><val href="548681">548681</val></taxon>
-   <count><val>4</val></count>
-   <node name="Herpesviridae">
-    <score><val>1</val></score>
-    <rank><val>family</val></rank>
-    <taxon><val href="10292">10292</val></taxon>
+   <node name="Pararnavirae">
+    <taxon><val href="2732397">2732397</val></taxon>
     <count><val>4</val></count>
-    <node name="Alphaherpesvirinae">
+    <score><val>1</val></score>
+    <rank><val>kingdom</val></rank>
+    <node name="Artverviricota">
+     <rank><val>phylum</val></rank>
      <score><val>1</val></score>
-     <rank><val>subfamily</val></rank>
-     <taxon><val href="10293">10293</val></taxon>
-     <count><val>3</val></count>
-     <node name="Varicellovirus">
+     <count><val>4</val></count>
+     <taxon><val href="2732409">2732409</val></taxon>
+     <node name="Revtraviricetes">
+      <rank><val>class</val></rank>
+      <count><val>4</val></count>
+      <taxon><val href="2732514">2732514</val></taxon>
       <score><val>1</val></score>
-      <rank><val>genus</val></rank>
-      <taxon><val href="10319">10319</val></taxon>
-      <count><val>2</val></count>
-      <node name="Suid alphaherpesvirus 1">
-       <count><val>1</val></count>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Suid alphaherpesvirus 1</val></vals>
-       </members>
-       <taxon><val href="10345">10345</val></taxon>
+      <node name="Ortervirales">
+       <rank><val>order</val></rank>
        <score><val>1</val></score>
-      </node>
-      <node name="Equid alphaherpesvirus 1">
-       <taxon><val href="10326">10326</val></taxon>
-       <members>
-        <vals><val>Equid alphaherpesvirus 1</val></vals>
-       </members>
-       <rank><val>species</val></rank>
-       <count><val>1</val></count>
-       <score><val>1</val></score>
-      </node>
-     </node>
-     <node name="Mardivirus">
-      <count><val>1</val></count>
-      <rank><val>genus</val></rank>
-      <taxon><val href="180252">180252</val></taxon>
-      <score><val>1</val></score>
-      <node name="Anatid alphaherpesvirus 1">
-       <taxon><val href="104388">104388</val></taxon>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Anatid alphaherpesvirus 1</val></vals>
-       </members>
-       <count><val>1</val></count>
-       <score><val>1</val></score>
+       <taxon><val href="2169561">2169561</val></taxon>
+       <count><val>4</val></count>
+       <node name="Retroviridae">
+        <rank><val>family</val></rank>
+        <count><val>4</val></count>
+        <taxon><val href="11632">11632</val></taxon>
+        <score><val>1</val></score>
+        <node name="Orthoretrovirinae">
+         <taxon><val href="327045">327045</val></taxon>
+         <count><val>4</val></count>
+         <score><val>1</val></score>
+         <rank><val>subfamily</val></rank>
+         <node name="Deltaretrovirus">
+          <count><val>1</val></count>
+          <taxon><val href="153136">153136</val></taxon>
+          <score><val>1</val></score>
+          <rank><val>genus</val></rank>
+          <node name="Bovine leukemia virus">
+           <members>
+            <vals><val>Bovine leukemia virus</val></vals>
+           </members>
+           <taxon><val href="11901">11901</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+          </node>
+         </node>
+         <node name="Lentivirus">
+          <score><val>1</val></score>
+          <taxon><val href="11646">11646</val></taxon>
+          <count><val>3</val></count>
+          <rank><val>genus</val></rank>
+          <node name="Jembrana disease virus">
+           <members>
+            <vals><val>Jembrana disease virus</val></vals>
+           </members>
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="36370">36370</val></taxon>
+           <count><val>1</val></count>
+          </node>
+          <node name="Visna-maedi virus">
+           <score><val>1</val></score>
+           <taxon><val href="2169971">2169971</val></taxon>
+           <count><val>1</val></count>
+           <rank><val>species</val></rank>
+           <members>
+            <vals><val>Visna-maedi virus</val></vals>
+           </members>
+          </node>
+          <node name="Equine infectious anemia virus">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="11665">11665</val></taxon>
+           <members>
+            <vals><val>Equine infectious anemia virus</val></vals>
+           </members>
+          </node>
+         </node>
+        </node>
+       </node>
       </node>
      </node>
     </node>
-    <node name="Gammaherpesvirinae">
+   </node>
+  </node>
+  <node name="Duplodnaviria">
+   <taxon><val href="2731341">2731341</val></taxon>
+   <count><val>4</val></count>
+   <score><val>1</val></score>
+   <rank><val>clade</val></rank>
+   <node name="Heunggongvirae">
+    <score><val>1</val></score>
+    <taxon><val href="2731360">2731360</val></taxon>
+    <count><val>4</val></count>
+    <rank><val>kingdom</val></rank>
+    <node name="Peploviricota">
+     <rank><val>phylum</val></rank>
      <score><val>1</val></score>
-     <rank><val>subfamily</val></rank>
-     <taxon><val href="10374">10374</val></taxon>
-     <count><val>1</val></count>
-     <node name="Macavirus">
+     <taxon><val href="2731361">2731361</val></taxon>
+     <count><val>4</val></count>
+     <node name="Herviviricetes">
+      <rank><val>class</val></rank>
+      <taxon><val href="2731363">2731363</val></taxon>
+      <count><val>4</val></count>
       <score><val>1</val></score>
-      <rank><val>genus</val></rank>
-      <taxon><val href="548687">548687</val></taxon>
+      <node name="Herpesvirales">
+       <rank><val>order</val></rank>
+       <score><val>1</val></score>
+       <taxon><val href="548681">548681</val></taxon>
+       <count><val>4</val></count>
+       <node name="Orthoherpesviridae">
+        <score><val>1</val></score>
+        <taxon><val href="3044472">3044472</val></taxon>
+        <count><val>4</val></count>
+        <rank><val>family</val></rank>
+        <node name="Alphaherpesvirinae">
+         <score><val>1</val></score>
+         <taxon><val href="10293">10293</val></taxon>
+         <count><val>3</val></count>
+         <rank><val>subfamily</val></rank>
+         <node name="Varicellovirus">
+          <score><val>1</val></score>
+          <count><val>2</val></count>
+          <taxon><val href="10319">10319</val></taxon>
+          <rank><val>genus</val></rank>
+          <node name="Varicellovirus equidalpha1">
+           <rank><val>species</val></rank>
+           <taxon><val href="3050276">3050276</val></taxon>
+           <count><val>1</val></count>
+           <score><val>1</val></score>
+           <node name="Equid alphaherpesvirus 1">
+            <rank><val>no rank</val></rank>
+            <score><val>1</val></score>
+            <count><val>1</val></count>
+            <taxon><val href="10326">10326</val></taxon>
+            <members>
+             <vals><val>Equid alphaherpesvirus 1</val></vals>
+            </members>
+           </node>
+          </node>
+          <node name="Varicellovirus suidalpha1">
+           <count><val>1</val></count>
+           <taxon><val href="3050355">3050355</val></taxon>
+           <score><val>1</val></score>
+           <rank><val>species</val></rank>
+           <node name="Suid alphaherpesvirus 1">
+            <rank><val>no rank</val></rank>
+            <score><val>1</val></score>
+            <taxon><val href="10345">10345</val></taxon>
+            <count><val>1</val></count>
+            <members>
+             <vals><val>Suid alphaherpesvirus 1</val></vals>
+            </members>
+           </node>
+          </node>
+         </node>
+         <node name="Mardivirus">
+          <count><val>1</val></count>
+          <taxon><val href="180252">180252</val></taxon>
+          <score><val>1</val></score>
+          <rank><val>genus</val></rank>
+          <node name="Anatid alphaherpesvirus 1">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <count><val>1</val></count>
+           <taxon><val href="104388">104388</val></taxon>
+           <members>
+            <vals><val>Anatid alphaherpesvirus 1</val></vals>
+           </members>
+          </node>
+         </node>
+        </node>
+        <node name="Gammaherpesvirinae">
+         <rank><val>subfamily</val></rank>
+         <taxon><val href="10374">10374</val></taxon>
+         <count><val>1</val></count>
+         <score><val>1</val></score>
+         <node name="Macavirus">
+          <rank><val>genus</val></rank>
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="548687">548687</val></taxon>
+          <node name="Macavirus alcelaphinegamma1">
+           <rank><val>species</val></rank>
+           <score><val>1</val></score>
+           <taxon><val href="3050134">3050134</val></taxon>
+           <count><val>1</val></count>
+           <node name="Alcelaphine gammaherpesvirus 1">
+            <members>
+             <vals><val>Alcelaphine gammaherpesvirus 1</val></vals>
+            </members>
+            <rank><val>no rank</val></rank>
+            <count><val>1</val></count>
+            <taxon><val href="35252">35252</val></taxon>
+            <score><val>1</val></score>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+  <node name="Monodnaviria">
+   <rank><val>clade</val></rank>
+   <count><val>1</val></count>
+   <taxon><val href="2731342">2731342</val></taxon>
+   <score><val>1</val></score>
+   <node name="Shotokuvirae">
+    <rank><val>kingdom</val></rank>
+    <score><val>1</val></score>
+    <taxon><val href="2732092">2732092</val></taxon>
+    <count><val>1</val></count>
+    <node name="Cressdnaviricota">
+     <count><val>1</val></count>
+     <taxon><val href="2732416">2732416</val></taxon>
+     <score><val>1</val></score>
+     <rank><val>phylum</val></rank>
+     <node name="Arfiviricetes">
       <count><val>1</val></count>
-      <node name="Alcelaphine gammaherpesvirus 1">
+      <taxon><val href="2732423">2732423</val></taxon>
+      <score><val>1</val></score>
+      <rank><val>class</val></rank>
+      <node name="Cirlivirales">
+       <rank><val>order</val></rank>
        <score><val>1</val></score>
        <count><val>1</val></count>
-       <rank><val>species</val></rank>
-       <members>
-        <vals><val>Alcelaphine gammaherpesvirus 1</val></vals>
-       </members>
-       <taxon><val href="35252">35252</val></taxon>
+       <taxon><val href="2732536">2732536</val></taxon>
+       <node name="Circoviridae">
+        <score><val>1</val></score>
+        <taxon><val href="39724">39724</val></taxon>
+        <count><val>1</val></count>
+        <rank><val>family</val></rank>
+        <node name="Circovirus">
+         <rank><val>genus</val></rank>
+         <score><val>1</val></score>
+         <count><val>1</val></count>
+         <taxon><val href="39725">39725</val></taxon>
+         <node name="Circovirus porcine2">
+          <score><val>1</val></score>
+          <count><val>1</val></count>
+          <taxon><val href="3048279">3048279</val></taxon>
+          <rank><val>species</val></rank>
+          <node name="Porcine circovirus 2">
+           <members>
+            <vals><val>Porcine circovirus 2</val></vals>
+           </members>
+           <rank><val>no rank</val></rank>
+           <count><val>1</val></count>
+           <taxon><val href="85708">85708</val></taxon>
+           <score><val>1</val></score>
+          </node>
+         </node>
+        </node>
+       </node>
       </node>
      </node>
     </node>
