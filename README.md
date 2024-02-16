@@ -30,17 +30,17 @@ A triage system to rapidly assess confidence level (low, medium, and high) in th
 -	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has >10% coverage by reads with >95% pairwise nucleotide identity. 
 -	This level of virus genome coverage indicates that the notifiable virus or a closely related virus are likely to be present in the sample. 
 -	Further analyses of the HTS data should be performed to determine what virus is present in the sample, including an investigation into whether there is read coverage of a region used for species/strain demarcation (see below). 
--	If further analysis indicates that the virus is notifiable, then the relevant Australian reference laboratory or Chief Veterinary Officer should be contacted (see below). 
+-	If further analysis indicates that the virus is notifiable, then the relevant State Veterinary Laboratory or the Office of the Chief Veterinary Officer should be contacted (see below). 
 
 ### Medium confidence
 -	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has >10% coverage by reads with <95% pairwise nucleotide identity. 
 -	This level of virus genome coverage indicates that the notifiable virus or a closely related virus are possibly present in the sample. 
 -	Further analyses of the HTS data should be performed to determine what virus is present in the sample, including an investigation into whether there is read coverage of a region used for species/strain demarcation (see below). 
--	If further analysis indicates that the virus is notifiable, then the relevant Australian reference laboratory or Chief Veterinary Officer should be contacted (see below). 
+-	If further analysis indicates that the virus is notifiable, then the relevant State Veterinary Laboratory or the Office of the Chief Veterinary Officer should be contacted (see below). 
 
 ### Low confidence
 -	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has <10% coverage by reads with <95% pairwise nucleotide identity.
--	This level of virus genome coverage indicates that positive detection of a notifiable virus is possible but not likely. 
+-	This level of virus genome coverage indicates that positive detection of a notifiable virus is still possible but not well-supported by the initial screening data. 
 -	Despite low levels of non-specific genome coverage often being caused by conserved regions in closely related viruses or artefacts of host genomes, it is possible the low coverage is originating from a notifiable virus. Further analyses of the HTS data can help ascertain if a notifiable virus is present at a low titre or from a divergent strain (see below). 
 
 Regions used for virus species/strain demarcation can be found in the relevant taxonomy reports provided by the [ICTV]. Links to the reports are provided in the [Notifiable Virus Compendium], along with other related information on the notifiable virus. The suggested thresholds above are based on initial testing with existing HTS datasets containing notifiable viruses. However, there may be cases that fall outside these thresholds and further testing of the Australian Biosecurity Genomic Database is required to develop robust detection criteria. Any suspected detections should be further investigated with additional analyses of the HTS data, with suggestions provided below. 
@@ -80,7 +80,7 @@ Instead of mapping HTS reads to a database, a de novo assembly-based approach ca
 It is useful to confirm any notifiable viruses detected via read mapping with contig assembly as it provides a separate method for detection and can characterize sequence diversity that may be masked by the alignment approach. However, as contig assembly requires overlapping reads, it may not be as sensitive as read mapping if there is low or scattered virus genome coverage. 
 
 ## Contacting the Chief Veterinary Office (CVO)
-All notifiable virus detections must be reported to the relevant Australian reference laboratory or Chief Veterinary Officer, as they can organise further investigation of the sample with the appropriate testing laboratory. Multiple different data analyses should be provided to support the suspected detection of a notifiable virus detection and physical samples may be requested if available for confirmatory testing using diagnostic methods such as serology, culturing, or PCR. 
+All notifiable virus detections must be reported to the relevant State Veterinary Laboratory or the Office of the Chief Veterinary Officer, as they can organise further investigation of the sample with the appropriate testing laboratory. Multiple different data analyses should be provided to support the suspected detection of a notifiable virus detection and physical samples may be requested if available for confirmatory testing using diagnostic methods such as serology, culturing, or PCR. 
 
 If there are any suspected detections, you can also call the Emergency Animal Disease Watch Hotline on 1800 675 888 (24 hours a day, every day of the year). If you are unsure of your results or would like to call a local veterinary officer, alternative numbers can be found for every state:
 
