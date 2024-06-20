@@ -8,7 +8,7 @@ The Australian Biosecurity Genomic Database is a curated collection of viral ref
 The latest version of the database contains 92 viruses, representing 33 viral families. Sequences were acquired from the National Center for Biotechnology Information (NCBI) Nucleotide database, using high-quality whole genome reference sequences from RefSeq where possible. Each virus species was represented by a single isolate and segmented genomes were merged so that each virus was represented by a single sequence to assist data analysis. 
 
   [National List of Reportable Diseases of Aquatic Animals]: <https://www.agriculture.gov.au/agriculture-land/animal/aquatic/reporting/reportable-diseases>
-  [National Notifiable Disease List of Terrestrial Animals]: <https://www.awe.gov.au/biosecurity-trade/pests-diseases-weeds/animal/notifiable#national-list-of-notifiable-diseases-of-terrestrial-animals-at-april-2019>
+  [National Notifiable Disease List of Terrestrial Animals]: <https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/notifiable#national-list-of-notifiable-diseases-of-terrestrial-animals-at-april-2024>
   [Krona chart]: <https://htmlview.glitch.me/?https://github.com/jbatovska/AustralianBiosecurityGenomicDatabase/blob/main/files/ABGD_taxonomy.krona.html>
 
 # Usage guidelines
@@ -33,8 +33,8 @@ A triage system to rapidly assess confidence level (low, medium, and high) in th
 -	If further analysis indicates that the virus is notifiable, then the relevant State Veterinary Laboratory or the Office of the Chief Veterinary Officer should be contacted (see below). 
 
 ### Medium confidence
--	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has >10% coverage by reads with <95% pairwise nucleotide identity. 
--	This level of virus genome coverage indicates that the notifiable virus or a closely related virus are possibly present in the sample. 
+-	Criteria: Virus genome sequence in the Australian Biosecurity Genomic Database has >10% coverage by reads with <95% pairwise nucleotide identity or <10% coverage by reads with >95% pairwise nucleotide identity.
+-	This level of virus genome coverage indicates that the notifiable virus or a closely related virus are possibly present in the sample, but could also be due to other factors, such as contamination. 
 -	Further analyses of the HTS data should be performed to determine what virus is present in the sample, including an investigation into whether there is read coverage of a region used for species/strain demarcation (see below). 
 -	If further analysis indicates that the virus is notifiable, then the relevant State Veterinary Laboratory or the Office of the Chief Veterinary Officer should be contacted (see below). 
 
@@ -101,7 +101,7 @@ If there are any suspected detections, you can also call the Emergency Animal Di
 [New South Wales]: <https://www.dpi.nsw.gov.au/biosecurity/report-a-pest-or-disease>
 [South Australia]: <https://pir.sa.gov.au/biosecurity/animal_health/reporting_animal_disease>
 [Western Australia]: <https://www.agric.wa.gov.au/livestock-biosecurity/reportable-animal-diseases>
-[Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease#:~:text=If%20you%20suspect%20a%20notifiable,Queensland%20on%2013%2025%2023>
+[Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease>
 [Northern Territory]: <https://nt.gov.au/industry/agriculture/livestock/animal-health-and-diseases/notifiable-diseases-in-animals-and-how-to-report-them>
 [Victoria]: <https://agriculture.vic.gov.au/biosecurity/animal-diseases/notifiable-diseases>
 [Tasmania]: <https://nre.tas.gov.au/biosecurity-tasmania/animal-biosecurity/animal-health/reporting-an-emergency-animal-disease>
