@@ -84,27 +84,33 @@ All notifiable virus detections must be reported to the relevant State Veterinar
 
 If there are any suspected detections, you can also call the Emergency Animal Disease Watch Hotline on 1800 675 888 (24 hours a day, every day of the year). If you are unsure of your results or would like to call a local veterinary officer, alternative numbers can be found for every state:
 
+[Australian Capital Territory]
+
 [New South Wales]
-
-[South Australia]
-
-[Western Australia]
-
-[Queensland]
 
 [Northern Territory]
 
-[Victoria]
+[Queensland]
+
+[South Australia]
 
 [Tasmania]
 
+[Victoria]
+
+[Western Australia]
+
+The [emergency animal diseases field guide for veterinarians] is also a valuable resource for the investigation and reporting of animal diseases in Australia. 
+
+[Australian Capital Territory]: <https://www.environment.act.gov.au/parks-conservation/plants-and-animals/rural-services/livestock-advice>
 [New South Wales]: <https://www.dpi.nsw.gov.au/biosecurity/report-a-pest-or-disease>
-[South Australia]: <https://pir.sa.gov.au/biosecurity/animal_health/reporting_animal_disease>
-[Western Australia]: <https://www.agric.wa.gov.au/livestock-biosecurity/reportable-animal-diseases>
-[Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease>
 [Northern Territory]: <https://nt.gov.au/industry/agriculture/livestock/animal-health-and-diseases/notifiable-diseases-in-animals-and-how-to-report-them>
-[Victoria]: <https://agriculture.vic.gov.au/biosecurity/animal-diseases/notifiable-diseases>
+[Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease>
+[South Australia]: <https://pir.sa.gov.au/biosecurity/animal_health/reporting_animal_disease>
 [Tasmania]: <https://nre.tas.gov.au/biosecurity-tasmania/animal-biosecurity/animal-health/reporting-an-emergency-animal-disease>
+[Victoria]: <https://agriculture.vic.gov.au/biosecurity/animal-diseases/notifiable-diseases>
+[Western Australia]: <https://www.agric.wa.gov.au/livestock-biosecurity/reportable-animal-diseases>
+[emergency animal diseases field guide for veterinarians]: <https://www.outbreak.gov.au/prepare-respond/identify-pests-diseases/emergency-animal-diseases-field-guide>
 
 ## Troubleshooting
 Further testing of the database using a greater number of HTS datasets from a variety of sample types and host animals is recommended to further inform the metrics and thresholds chosen for the screening analysis criteria, which will help to address some of the limitations associated with this approach (Table 1). The addition of biological characteristics such as host and symptoms could improve the applicability of the criteria when dealing with low or medium confidence results.
