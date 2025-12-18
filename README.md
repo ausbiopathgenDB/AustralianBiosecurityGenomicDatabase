@@ -121,3 +121,6 @@ Further testing of the database using a greater number of HTS datasets from a va
 
 ## References
 Schlaberg, Robert et al. 2017. ‘Validation of Metagenomic Next-Generation Sequencing Tests for Universal Pathogen Detection’. Archives of Pathology & Laboratory Medicine 141(6): 776–86. 
+
+## Licence
+This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
