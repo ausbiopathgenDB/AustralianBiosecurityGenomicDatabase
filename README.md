@@ -102,8 +102,8 @@ If there are any suspected detections, you can also call the Emergency Animal Di
 
 The [emergency animal diseases field guide for veterinarians] is also a valuable resource for the investigation and reporting of animal diseases in Australia. 
 
-[Australian Capital Territory]: <https://www.environment.act.gov.au/parks-conservation/plants-and-animals/rural-services/livestock-advice>
-[New South Wales]: <https://www.dpi.nsw.gov.au/biosecurity/report-a-pest-or-disease>
+[Australian Capital Territory]: <https://www.act.gov.au/health/reporting-notifiable-diseases>
+[New South Wales]: <https://www.health.nsw.gov.au/Infectious/Pages/notification.aspx>
 [Northern Territory]: <https://nt.gov.au/industry/agriculture/livestock/animal-health-and-diseases/notifiable-diseases-in-animals-and-how-to-report-them>
 [Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease>
 [South Australia]: <https://pir.sa.gov.au/biosecurity/animal_health/reporting_animal_disease>
