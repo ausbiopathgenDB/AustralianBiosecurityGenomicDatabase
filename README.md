@@ -102,14 +102,14 @@ If there are any suspected detections, you can also call the Emergency Animal Di
 
 The [emergency animal diseases field guide for veterinarians] is also a valuable resource for the investigation and reporting of animal diseases in Australia. 
 
-[Australian Capital Territory]: <https://www.act.gov.au/health/reporting-notifiable-diseases>
-[New South Wales]: <https://www.health.nsw.gov.au/Infectious/Pages/notification.aspx>
+[Australian Capital Territory]: <https://www.cityservices.act.gov.au/__data/assets/pdf_file/0007/2054266/Obligation-to-report.pdf>
+[New South Wales]: <https://www.dpi.nsw.gov.au/dpi/biosecurity/animal-biosecurity/animal-diseases-of-concern-for-nsw2>
 [Northern Territory]: <https://nt.gov.au/industry/agriculture/livestock/animal-health-and-diseases/notifiable-diseases-in-animals-and-how-to-report-them>
 [Queensland]: <https://www.daf.qld.gov.au/contact/report-a-biosecurity-pest-or-disease>
 [South Australia]: <https://pir.sa.gov.au/biosecurity/animal_health/reporting_animal_disease>
 [Tasmania]: <https://nre.tas.gov.au/biosecurity-tasmania/animal-biosecurity/animal-health/reporting-an-emergency-animal-disease>
 [Victoria]: <https://agriculture.vic.gov.au/biosecurity/animal-diseases/notifiable-diseases>
-[Western Australia]: <https://www.agric.wa.gov.au/livestock-biosecurity/reportable-animal-diseases>
+[Western Australia]: <https://www.dpird.wa.gov.au/businesses/biosecurity/animal-biosecurity/monitoring-and-reporting/reportable-animal-diseases/>
 [emergency animal diseases field guide for veterinarians]: <https://www.outbreak.gov.au/prepare-respond/identify-pests-diseases/emergency-animal-diseases-field-guide>
 
 ## Troubleshooting
